@@ -15,38 +15,53 @@
     $result = $conn->query($sql);
     // var_dump($result);
     ?>
+    <div class="container">
+
+    
     <h1>CRUD PHP PEMROGRAMAN WEB 3</h1>
-    <table class="table table-striped">
-        <thead> 
-            <tr>
-                <th>No</th>
-                <th>Judul</th>
-                <th>Isi</th>
-                <th>Tampilkan</th>
-                <th>AKSI</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if($result->num_rows>0)
-            {
-                $no=1;
-                while($row = $result->fetch_assoc()) 
+    <a href="create.php" class="btn btn-primary" >Create Data</a>
+    <div class="card">
+        <div class="card-header">
+            Data Berita
+        </div>
+
+        <div class="card-body">
+            <table class="table table-striped">
+            <thead> 
+                <tr>
+                    <th>No</th>
+                    <th>Judul</th>
+                    <th>Isi</th>
+                    <th>Tampilkan</th>
+                    <th>AKSI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if($result->num_rows>0)
                 {
-                    ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $row['judul'];?></td>
-                        <td><?php echo $row['isi'] ;?></td>
-                        <td><?= $row['tampilkan'] ;?></td>
-                        <td></td>
-                    </tr>
-                    <?php
+                    $no=1;
+                    while($row = $result->fetch_assoc()) 
+                    {
+                        ?>
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= $row['judul'];?></td>
+                            <td><?php echo $row['isi'] ;?></td>
+                            <td><?= $row['tampilkan'] ;?></td>
+                            <td></td>
+                        </tr>
+                        <?php
+                    }
                 }
-            }
-            ?>
-            
-        </tbody>
-    </table>
+                ?>
+                
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    </div>
+    
 </body>
 </html>

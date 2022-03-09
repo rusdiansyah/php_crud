@@ -1,0 +1,8 @@
+https://github.com/rusdiansyah/php_crud
+download zip ke folder xampp/htdocs/
+file klik kanan extrax here
+akan tampil folder php_crud-main
+buka localhost/phpmyadmin
+buat nama database php_crud
+pilih database
+import file sql
